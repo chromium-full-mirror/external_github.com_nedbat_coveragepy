@@ -32,6 +32,13 @@ Unreleased
 
 .. _issue 2314: https://github.com/coveragepy/coveragepy/issues/2314
 
+- Fix: file names (and plugin names) can contain control characters, which are
+  legal in POSIX paths but unsafe in reports: in XML 1.0 they make the document
+  non-well-formed, and in a terminal they act as escape sequences (colors,
+  title/clipboard sequences, cursor moves that forge output). Now the XML
+  report, the text and Markdown summary reports, and ``coverage debug data``
+  replace non-printable characters in names. Printable names are unchanged.
+
 - Fix: a file pattern (from ``include``, ``omit``, or a ``[paths]`` alias)
   containing a newline sent the glob-to-regex translation into an infinite
   loop, hanging the process.  Newlines in patterns are now handled like any
