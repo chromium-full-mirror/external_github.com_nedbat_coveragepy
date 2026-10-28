@@ -23,10 +23,10 @@ upgrading your version of coverage.py.
 Unreleased
 ----------
 
-- Fix: a one-line class body immediately followed by another statement (such as
-  ``class Foo: ...`` on its own line) was incorrectly reported as a missing
-  branch when using the sys.monitoring core, as described in `issue 2167`_.
-  This is now fixed.
+- Fix: a one-line class or function body immediately followed by another
+  statement (such as ``class Foo: ...`` on its own line) was incorrectly
+  reported as a missing branch when using the sys.monitoring core. This is now
+  fixed, closing `issue 2167`_ and `issue 2337`_.
 
 - Fix: the HTML report only rewrites a file's page when the file or its data
   has changed, but each page also links to the previous and next files. When
@@ -55,6 +55,7 @@ Unreleased
 .. _issue 2167: https://github.com/coveragepy/coveragepy/issues/2167
 .. _issue 2291: https://github.com/coveragepy/coveragepy/issues/2291
 .. _issue 2295: https://github.com/coveragepy/coveragepy/issues/2295
+.. _issue 2337: https://github.com/coveragepy/coveragepy/issues/2337
 
 
 .. start-releases

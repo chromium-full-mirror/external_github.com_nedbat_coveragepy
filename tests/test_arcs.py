@@ -276,6 +276,17 @@ class SimpleArcTest(CoverageTest):
             branchz_missing="24",
         )
 
+    def test_bug_2337(self) -> None:
+        self.check_coverage(
+            """\
+            def test(): 0
+            0
+            test()
+            """,
+            branchz="1. 12",
+            branchz_missing="",
+        )
+
 
 class WithTest(CoverageTest):
     """Arc-measuring tests involving context managers."""
